@@ -1,0 +1,6 @@
+# Classificar Gatilho de Manutenção
+
+## Contexto
+Você receberá um gatilho bruto (log de erro, issue, e-mail, etc.) e deverá classificá-lo em uma das quatro categorias de manutenção da ISO 14764: Corretiva, Adaptativa, Perfectiva ou Preventiva.
+
+## Entrada

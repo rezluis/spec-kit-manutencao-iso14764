@@ -1,0 +1,20 @@
+# GitHub
+PyGithub>=2.1
+
+# GitLab
+python-gitlab>=3.15
+
+# Jira
+jira>=3.5
+
+# Slack
+slack-sdk>=3.21
+
+# Email (já incluso no Python)
+# smtplib, email
+
+# Utilitários
+requests>=2.28
+tenacity>=8.2  # para retry
+backoff>=2.2   # para rate limiting
+python-dotenv>=1.0

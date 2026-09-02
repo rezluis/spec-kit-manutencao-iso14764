@@ -1,0 +1,33 @@
+# Configuração do Gateway Agent
+gateway:
+  # Diretório para armazenar artefatos temporários
+  work_dir: "./.gateway_work/"
+  
+  # Modelo de LLM a ser usado para classificação
+  llm:
+    provider: "openai"  # ou "ollama", "mock"
+    model: "gpt-3.5-turbo"
+    temperature: 0.3
+    max_tokens: 500
+  
+  # API keys e endpoints (via variáveis de ambiente)
+  openai_api_key: ${OPENAI_API_KEY}
+  
+  # Integrações
+  integrations:
+    github:
+      token: ${GITHUB_TOKEN}
+      api_url: "https://api.github.com"
+    jira:
+      url: ${JIRA_URL}
+      user: ${JIRA_USER}
+      token: ${JIRA_TOKEN}
+  
+  # Limites e timeouts
+  timeout_seconds: 30
+  max_retries: 3
+
+# Logging
+logging:
+  level: "INFO"
+  format: "json"  # ou "text"

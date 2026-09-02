@@ -1,0 +1,120 @@
+spec-kit-manutencao-iso14764/
+│
+├── .specify/                                    
+│   ├── constitution.md                          
+│   │
+│   ├── agents/                                  #
+│   │   ├── gateway.agent.md                     #
+│   │   ├── architecture-understanding.agent.md  # ✅ Extrai arquitetura do código
+│   │   ├── impact-analysis.agent.md             # ✅ Analisa impacto e gera plano
+│   │   ├── implementation.agent.md              # ✅ Implementa mudanças aprovadas
+│   │   ├── validation.agent.md                  # ✅ Valida testes, cobertura, regressões
+│   │   └── pr.agent.md                          # ✅ 
+│   │
+│   ├── skills/                                  # ✅ CONCLUÍDO - 15 Skills Especificadas
+│   │   ├── classify-trigger.skill.md            # ✅ Classifica tipo de manutenção
+│   │   ├── extract-packages.skill.md            # ✅ Extrai estrutura de pacotes
+│   │   ├── extract-endpoints.skill.md           # ✅ Extrai endpoints REST
+│   │   ├── extract-entities.skill.md            # ✅ Extrai entidades JPA
+│   │   ├── extract-business-rules.skill.md      # ✅ Extrai regras de negócio
+│   │   ├── extract-dependencies.skill.md        # ✅ Extrai dependências externas
+│   │   ├── identify-affected-artifacts.skill.md # ✅ Identifica artefatos afetados
+│   │   ├── analyze-dependencies.skill.md        # ✅ Analisa árvore de dependências
+│   │   ├── estimate-risk.skill.md               # ✅ Estima risco da mudança
+│   │   ├── generate-change-plan.skill.md        # ✅ Gera plano de ação detalhado
+│   │   ├── apply-code-change.skill.md           # ✅ Aplica mudança no código
+│   │   ├── update-tests.skill.md                # ✅ Atualiza/cria testes
+│   │   ├── generate-diff.skill.md               # ✅ Gera diff das alterações
+│   │   ├── run-tests.skill.md                   # ✅ Executa testes e reporta
+│   │   ├── measure-coverage.skill.md            # ✅ Mede cobertura de testes
+│   │   ├── detect-regressions.skill.md          # ✅ Detecta regressões
+│   │   ├── run-static-analysis.skill.md         # ✅ Executa análise estática
+│   │   ├── create-branch.skill.md               # ✅ Cria branch de desenvolvimento
+│   │   ├── create-pr.skill.md                   # ✅ Cria Pull Request
+│   │   └── notify-reviewers.skill.md            # ✅ Notifica revisores
+│   │
+│   └── rules/                                   # ✅ CONCLUÍDO - 5 Rules Definidas
+│       ├── iso-14764.rules.md                   # ✅ Regras da norma ISO 14764
+│       ├── java-spring.rules.md                 # ✅ Regras Java/Spring Boot
+│       ├── human-approval.rules.md              # ✅ Regras de aprovação humana
+│       ├── coding-standards.rules.md            # ✅ Padrões de código
+│       └── security.rules.md                    # ✅ Regras de segurança
+│
+├── specs/                                       # ⏳ EM ANDAMENTO
+│   └── maintenance-process/
+│       ├── spec.md                              # ⏳ A FAZER - Visão geral do processo
+│       ├── plan.md                              # ⏳ A FAZER - Arquitetura dos agentes
+│       └── tasks.md                             # ⏳ A FAZER - Tarefas de implementação
+│
+├── docs/                                        # ⏳ EM ANDAMENTO
+│   ├── templates/                               # ⏳ A FAZER
+│   │   ├── bug-report.template.md               # ⏳ Template para bugs
+│   │   ├── change-request.template.md           # ⏳ Template para mudanças
+│   │   ├── impact-assessment.template.md        # ⏳ Template de análise de impacto
+│   │   ├── architecture-spec.template.md        # ⏳ Template de arquitetura
+│   │   └── pr-description.template.md           # ⏳ Template de PR
+│   │
+│   └── examples/                                # ⏳ A FAZER
+│       ├── corrigir-bug-exemplo/                # ⏳ Exemplo: manutenção corretiva
+│       │   ├── trigger.md                       # ⏳ Gatilho (log/issue)
+│       │   ├── impact-analysis.md               # ⏳ Relatório de impacto
+│       │   ├── change-plan.md                   # ⏳ Plano de mudança
+│       │   └── pr-description.md                # ⏳ Descrição do PR
+│       │
+│       └── adaptar-ambiente-exemplo/            # ⏳ Exemplo: manutenção adaptativa
+│           ├── trigger.md
+│           ├── impact-analysis.md
+│           ├── change-plan.md
+│           └── pr-description.md
+│
+├── src/                                         # ⏳ EM ANDAMENTO
+│   ├── agents/                                  # ⏳ A FAZER - Código dos agentes
+│   │   ├── gateway/
+│   │   │   └── agent.py                        # ⏳ Código do Gateway Agent
+│   │   ├── architecture/
+│   │   │   └── agent.py                        # ⏳ Código do Architecture Agent
+│   │   ├── impact/
+│   │   │   └── agent.py                        # ⏳ Código do Impact Analysis Agent
+│   │   ├── implement/
+│   │   │   └── agent.py                        # ⏳ Código do Implementation Agent
+│   │   ├── validate/
+│   │   │   └── agent.py                        # ⏳ Código do Validation Agent
+│   │   └── pr/
+│   │       └── agent.py                        # ⏳ Código do PR Agent
+│   │
+│   ├── integrations/                            # ⏳ A FAZER
+│   │   ├── github_api.py                       # ⏳ Integração com GitHub
+│   │   ├── gitlab_api.py                       # ⏳ Integração com GitLab
+│   │   ├── jira_api.py                         # ⏳ Integração com Jira
+│   │   └── slack_api.py                        # ⏳ Integração com Slack
+│   │
+│   ├── prompts/                                 # ⏳ A FAZER
+│   │   ├── architecture-understanding.prompt    # ⏳ Prompt otimizado
+│   │   ├── impact-analysis.prompt               # ⏳ Prompt otimizado
+│   │   ├── implementation.prompt                # ⏳ Prompt otimizado
+│   │   ├── validation.prompt                    # ⏳ Prompt otimizado
+│   │   └── pr.prompt                            # ⏳ Prompt otimizado
+│   │
+│   └── utils/                                   # ⏳ A FAZER
+│       ├── git_utils.py                         # ⏳ Utilitários Git
+│       ├── parser_utils.py                      # ⏳ Utilitários de parser Java
+│       └── test_utils.py                        # ⏳ Utilitários de testes
+│
+├── evaluation/                                  # ⏳ A FAZER (após estudo de caso)
+│   ├── study-case-1/
+│   │   ├── metrics/
+│   │   │   ├── impact-time.json                 # ⏳ Tempo de análise de impacto
+│   │   │   ├── implementation-time.json         # ⏳ Tempo de implementação
+│   │   │   ├── coverage-before.json             # ⏳ Cobertura antes
+│   │   │   └── coverage-after.json              # ⏳ Cobertura depois
+│   │   └── logs/
+│   └── analysis/
+│       └── results_analysis.ipynb               # ⏳ Análise dos resultados
+│
+└── paper/                                       # ⏳ EM ANDAMENTO (futuro)
+    ├── outline.md                               # ⏳ A FAZER - Estrutura do artigo
+    ├── introduction.md                          # ⏳ A FAZER - Introdução
+    ├── related-work.md                          # ⏳ A FAZER - Trabalhos relacionados
+    ├── methodology.md                           # ⏳ A FAZER - Metodologia
+    ├── results.md                               # ⏳ A FAZER - Resultados
+    └── conclusion.md                            # ⏳ A FAZER - Conclusão
