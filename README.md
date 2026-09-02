@@ -53,42 +53,25 @@ spec-kit-manutencao/
 └── README.md                          # Documentação do projeto
 
 ```
-**Fluxo Principal**
+**Fluxo Principal/Pipeline**
 
 ```mermaid
-flowchart TD
-    A[Início: Issue aberta no GitHub] --> B[Dev invoca /maintenance.triage ISSUE-123]
-    
-    B --> C{Agente: triage-agent<br/>Carrega regras da ISO}
-    
-    C --> D[Executa skill github-fetcher]
-    D --> E[Chama script Python<br/>src/integrations/github_client.py]
-    E --> F[Script retorna dados da Issue<br/>via API REST do GitHub]
-    
-    F --> G[Agente classifica a Issue<br/>Corretiva / Adaptativa / Perfectiva / Preventiva]
-    G --> H[Gera artefato inicial<br/>specs/changes/ISSUE-123/impact-analysis.md]
-    
-    H --> I{Dev revisa classificação}
-    I -->|Aprova| J[Invoca /maintenance.analyze ISSUE-123]
-    I -->|Rejeita| K[Dev ajusta manualmente o relatório]
-    K --> J
-    
-    J --> L{Agente: impact-analyst}
-    L --> M[Analisa módulos afetados<br/>com base na issue e no código fonte local]
-    M --> N[Atualiza o relatório de impacto<br/>com estimativa de esforço e dependências]
-    
-    N --> O{Dev aprova a análise?}
-    O -->|Não| P[Dev solicita ajustes à IA]
-    P --> L
-    O -->|Sim| Q[Invoca /maintenance.implement ISSUE-123]
-    
-    Q --> R{Agente: implementer}
-    R --> S[Lê a especificação em spec.md]
-    S --> T[Gera código de correção<br/>respeitando regras de codificação]
-    T --> U[Cria testes unitários para validar a correção]
-    U --> V[Gera pull request no GitHub<br/>com referência à issue]
-    
-    V --> W[Dev revisa PR]
-    W --> X{Fim}
+flowchart LR
+    subgraph "Pipeline de Manutenção"
+        direction LR
+        A[process-issues.skill<br/><-> gateway.agent] --> B[triage-issues.skill<->triage.agent]
+        B --> C[impact-analysis.skill<->impact-analyst.agent]
+        C --> D[fix-issues.skill<->fix-issues.agent]
+        D --> E[babysit-prs.skill]
+    end
+
+    subgraph "Entrada"
+        G[GitHub Issue<br/>#123] --> A
+    end
+
+    subgraph "Saída"
+        E --> P[PR #456]
+        E --> R[Relatórios]
+    end
 ```
 
