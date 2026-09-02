@@ -35,6 +35,7 @@ spec-kit-manutencao/
 **Fluxo Principal**
 
 ```mermaid
+flowchart TD
     A[Início: Issue aberta no GitHub] --> B[Dev invoca /maintenance.triage ISSUE-123]
     
     B --> C{Agente: triage-agent<br/>Carrega regras da ISO}
@@ -68,6 +69,5 @@ spec-kit-manutencao/
     
     V --> W[Dev revisa PR]
     W --> X{Fim}
-    
 ```
 
