@@ -1,0 +1,35 @@
+# extension.yml
+schema_version: "1.0"
+
+extension:
+  id: "maintenance"  # ID único da sua extensão
+  name: "Maintenance Workflow"
+  version: "1.0.0"
+  description: "Fluxo de manutenção de software baseado na ISO/IEC 14764"
+  author: "Luis Felipe Silva Rezende"
+  repository: "https://github.com/rezluis/spec-kit-manutencao-iso14764"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=0.1.0"
+
+provides:
+  commands:
+    - name: "speckit.maintenance.analyze"
+      file: "commands/analyze.md"
+      description: "Analisa uma issue de manutenção no GitHub"
+    - name: "speckit.maintenance.implement"
+      file: "commands/implement.md"
+      description: "Executa a implementação com base no relatório de impacto"
+    - name: "speckit.maintenance.issues"
+      file: "commands/issues.md"
+      description: "Consulta e filtra issues do GitHub"
+    - name: "speckit.maintenance.triage"
+      file: "commands/triage.md"
+      description: "Analisa o backlog e gera relatório de triagem priorizado"
+    - name: "speckit.maintenance.generate-tests"
+      file: "commands/generate-tests.md"
+      description: "Gera testes automatizados para issue, arquivo ou funcionalidade"
+    - name: "speckit.maintenance.run-tests"
+      file: "commands/run-tests.md"
+      description: "Executa a suíte de testes e apresenta os resultados"
